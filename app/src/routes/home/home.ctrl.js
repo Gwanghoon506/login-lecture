@@ -1,12 +1,11 @@
 "use strict";
 
 const hello = (req, res) => {
-    res.render('../../views/home/index.ejs');
-    // 
+    res.render('home/index');
 }
 
 const login = (req, res) => {
-    res.render('../../views/home/login.ejs');
+    res.render('home/login');
 }
 
 export default {hello, login};

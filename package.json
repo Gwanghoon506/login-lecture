@@ -1,15 +1,15 @@
 {
   "name": "login-lecture",
   "version": "1.0.0",
-  "main": "./src/app.js",
+  "main": "./app/app.js",
   "bin": {
     "login-lecture": "www.js"
   },
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/bin/www.js",
-    "dev": "nodemon --watch ./src ./src/bin/www.js"
+    "start": "node ./app/bin/www.js",
+    "dev": "nodemon --watch ./app ./app/bin/www.js"
   },
   "author": "",
   "license": "ISC",
