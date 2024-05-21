@@ -1,12 +1,12 @@
 "use strict";
 
-import express from 'express';
+const express = require('express');
 const router = express.Router();
 
-import ctrl from "./home.ctrl.js";
+const ctrl = require('./home.ctrl');
 
 router.get("/", ctrl.output.hello);
 router.get("/login", ctrl.output.login);
 router.post("/login", ctrl.process.login);
 
-export default router;
+module.exports = router;

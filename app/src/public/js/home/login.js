@@ -10,7 +10,7 @@ loginButton.addEventListener("click", () => {
     const req = {
         id: loginId.value,
         password: loginPassword.value
-    }
+    };
 
     fetch("/login", {
         method: "POST",

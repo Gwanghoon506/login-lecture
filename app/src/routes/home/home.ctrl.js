@@ -40,4 +40,4 @@ const process = {
     }
 }
 
-export default {output, process};
+module.exports = {output, process};
