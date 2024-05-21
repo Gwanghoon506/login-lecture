@@ -21,6 +21,10 @@ loginButton.addEventListener("click", () => {
     })
     .then((res) => res.json())
     .then((res) => {
-        console.log(res);
-    });
+        if (res.success) {
+            location.href = "/";
+        } else {
+            alert(res.msg);
+        }
+    }).catch((err) => console.log("로그인 중 에러발생!"));
 });
