@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="stylesheet" href="/css/home/login.css">    
 </head>
 <body>
-        <input id="id" type="text" placeholder="아이디"> <br>
+        <!-- <input id="id" type="text" placeholder="아이디"> <br>
         <input id="password" type="password" placeholder="비밀번호"> <br>
-        <button id="loginButton" type="">로그인</button>
+        <button id="loginButton" type="">로그인</button> -->
+        <div class="container">
+            <div id="loginForm">
+                <h2>Login Here</h2>
+                <input type="id" name="id" id="id" placeholder="Enter Id Here">
+                <input type="password" name="password" id="password" placeholder="Enter Password Here">
+                <button id="loginButton"><a href="#">Login</a></button>
+    
+                <p class="link">Don't have an account<br>
+                <a href="/register">Sign up </a> here</a></p>
+            </div>
+        </div>
     <script  src="/js/home/login.js" defer></script>
     <!-- type="text/javascript" -->
 </body>
+<!-- Copyright (c) 2024 by Rozan Chitrakar (https://codepen.io/PraRoz/pen/mdmZvwv) -->
+
 </html>
