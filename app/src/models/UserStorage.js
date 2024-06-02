@@ -23,6 +23,7 @@ class UserStorage {
         return newUsers;
     }
 
+    // 아이디를 파라미터로 받아 해당된 인덱스를 찾고 users에서 해당 인덱스인 값들로 이루어진 객체를 반환
     static getUserInfo(id) {
         const users = this.#users;
         const idx = users.id.indexOf(id);
@@ -31,8 +32,14 @@ class UserStorage {
             newUsers[info] = users[info][idx];
             return newUsers;
         }, {});
-        
+
         return userInfo;
+    }
+
+    static save(client) {
+        this.#users.id.push(client.id);
+        this.#users.password.push(client.password);
+        this.#users.name.push(client.name);
     }
 }
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/home/login.css">    
+    <link rel="stylesheet" href="/css/home/register.css">    
 </head>
 <body>
         <!-- <input id="id" type="text" placeholder="아이디"> <br>
@@ -12,18 +12,19 @@
         <button id="loginButton" type="">로그인</button> -->
         <div class="container">
             <form action="post" id="form">
-                <h2>Login Here</h2>
-                <input type="id" name="id" id="id" placeholder="Enter Id Here">
+                <h2>Sign Up Here</h2>
+                <input type="text" name="id" id="id" placeholder="Enter Id Here">
+                <input type="text" name="name" id="name" placeholder="Enter Name Here">
                 <input type="password" name="password" id="password" placeholder="Enter Password Here">
-                <button id="loginButton">
-                    Login
+                <input type="password" name="confirm-password" id="confirm-password" placeholder="Enter Password Again Here">
+                <button id="signUpButton">
+                    Sign Up
                 </button>
-    
-                <p class="link">Don't have an account<br>
-                <a href="/register">Sign up </a> here</a></p>
+                <p class="link">If you have an account<br>
+                <a href="/login">Log in</a> here</a></p>
             </form>
         </div>
-    <script  src="/js/home/login.js" defer></script>
+    <script  src="/js/home/register.js" defer></script>
     <!-- type="text/javascript" -->
 </body>
 <!-- Copyright (c) 2024 by Rozan Chitrakar (https://codepen.io/PraRoz/pen/mdmZvwv) -->

@@ -62,7 +62,7 @@ body {
     font-family: Arial;
 }
 
-#loginButton{
+#signUpButton{
     width: 240px;
     height: 40px;
     background: #ff7200;
@@ -74,15 +74,11 @@ body {
     color: #fff;
     transition: 0.4s ease;
 }
-#loginButton:hover{
+#signUpButton:hover{
     background: #fff;
     color: #ff7200;
 }
-#loginButton a{
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-}
+
 #form .link{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;

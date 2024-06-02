@@ -5,8 +5,8 @@ const loginId = document.querySelector("#id");
 const loginPassword = document.querySelector("#password");
 const loginButton = document.querySelector("#loginButton");
 
-loginButton.addEventListener("click", () => {
-
+loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
     const req = {
         id: loginId.value,
         password: loginPassword.value
