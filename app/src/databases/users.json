@@ -1,6 +1,1 @@
-{
-    "id": ["qwer", "asdf"],
-    "password": ["1234", "5678"],
-    "name": ["a", "b"]
-}
-
+{"id":["abcd","aaa"],"password":["1234","123"],"name":["qwer","bbb"]}

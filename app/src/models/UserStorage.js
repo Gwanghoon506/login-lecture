@@ -9,13 +9,23 @@ class UserStorage {
     //     password: ["1234", "5678"],
     //     name: ["a", "b", "c"],
     // };
-
     // 다른 파일에서 users에 접근할 수 있게 getter 생성
     // 파라미터의 갯수를 호출하는 쪽에서 지정할 수 있게하기 위해 ...을 사용
-    static getUsers(...fields) {
+    static getUsers(isAll, ...fields) {
         // const users = this.#users;
         // reduce를 사용하여 받아온 필드값을 순회하면서 users에 존재하는 것인지를 확인 후
         // 각 필드값을 newUsers에 넣어서 반환
+
+        return fs
+            .readFile("../app/src/databases/users.json")
+            .then((data) => this.#getUsers(data,isAll, fields))
+            .catch((err) => console.log(err));
+    }
+
+    static #getUsers(data, isAll, fields) {
+        const users = JSON.parse(data);
+        if(isAll) return users;
+
         const newUsers = fields.reduce((newUsers, field) => {
             if(users.hasOwnProperty(field)) {
                 newUsers[field] = users[field];
@@ -37,7 +47,7 @@ class UserStorage {
         // }
         ).then((data) => {
             return this.#getUserInfo(data, id);
-        });
+        }).catch((err) => console.log(err));
     }
 
     static #getUserInfo(data, id) {
@@ -52,10 +62,20 @@ class UserStorage {
         return userInfo;
     }
 
-    static save(client) {
+    static async save(client) {
+        const users = await this.getUsers(true);
+        if(users.id.includes(client.id)) {
+            throw "이미 존재하는 아이디 입니다.";
+        }
+        users.id.push(client.id);
+        users.password.push(client.password);
+        users.name.push(client.name);
+        // 모든 값을 가져옴
+        fs.writeFile("../app/src/databases/users.json", JSON.stringify(users));
         // this.#users.id.push(client.id);
         // this.#users.password.push(client.password);
         // this.#users.name.push(client.name);
+        return {success: true};
     }
 }
 

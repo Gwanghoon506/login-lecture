@@ -26,13 +26,15 @@ class User {
         return result;
     }
 
-    register() {
+    async register() {
         const client = this.body;
-        UserStorage.save(client);
-        const result = {};
-        result.success = true;
-        result.msg = "회원가입 성공!";
-        return result;
+        try {
+            const result = await UserStorage.save(client);
+            result.msg = "회원가입 성공!";
+            return result;
+        } catch (err) {
+            return result = {success: false, msg: err};
+        }
     }
 }
 
